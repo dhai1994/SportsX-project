@@ -1,0 +1,304 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+
+.main{
+    background-image: url('https://i0.wp.com/www.alainguillot.com/wp-content/uploads/2022/05/Community-coperation.png?fit=632%2C334&ssl=1&is-pending-load=1');
+    height: 70vh;
+    background-position: center ;
+    background-size: max(1200px,);
+    background-repeat: none;
+    position: relative;
+    
+}
+.main .box {
+    height: 644px;
+    width: 100%;
+    opacity: 0.69;
+    position: absolute;
+    top: 0;
+    background-color: rgb(10, 10, 10);
+}
+
+nav{
+    max-width: 60vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62;
+}
+
+nav img{
+    color:rgb(17, 17, 17);
+    width: 120px;
+    position: relative;
+    z-index: 20;
+}
+nav button{
+    position: relative;
+    z-index: 20;
+}
+
+.dropdown-wrapper {
+  margin-top: 10px;
+}
+
+.dropdown-expanded {
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-expanded div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.dropdown-expanded div:last-child {
+  border-bottom: none;
+}
+
+.dropdown-expanded div:hover {
+  background-color: #333;
+}
+
+
+.hero{
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 40;
+    position: relative;
+    z-index: 20;
+    gap: 15px;
+    padding: 29px;
+}
+
+.hero> :nth-child(1){
+    font-weight: 900;
+    font-size: 48px;
+    text-align: center;
+}
+
+.hero> :nth-child(2){
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hero> :nth-child(3){
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.separation {
+    height: 10px;
+    background-color: rgb(7, 7, 7);
+    position: relative;
+    z-index: 20;
+}
+
+.btn {
+    padding: 3px 8px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(27, 26, 26, 0.021);
+    border-radius: 4px;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+
+.btn-red {
+    background-color: rgb(8, 8, 8);
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.btn-red-sm {
+    background-color: rgb(8, 8, 8);
+    color: white;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+.main input {
+    padding: 7px 101px 8px 14px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(44, 42, 42, 0.5);
+}
+
+/* Basic section layout */
+.first {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #070707; /* Dark blue like yours */
+  color: white;
+  text-align: center;
+}
+
+/* Text and video block widths */
+.text-block, .media-block {
+  width: 100%;
+}
+
+/* Video styling */
+.media-block video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+/* Desktop view side-by-side */
+@media (min-width: 768px) {
+  .first {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .text-block, .media-block {
+    flex: 1;
+    padding: 1rem;
+  }
+}
+
+
+.separation {
+    height: 10px;
+    background-color: rgb(34, 33, 33);
+    position: relative;
+    z-index: 20;
+}
+
+section.first>div {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 0;
+}
+
+section.first>div :nth-child(1) {
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+
+section.first>div :nth-child(2) {
+    font-size: 24px;
+
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 48px;
+}
+
+.faq {
+    background: rgba(7, 7, 7, 0.952);
+    color: white;
+    padding: 34px;
+}
+
+.faqbox:hover {
+    background-color: #0c0c0c;
+    color: white;
+}
+
+.faqbox svg {
+    filter: invert(1);
+}
+
+.faqbox {
+    transition: all 1s ease-out;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #2d2d2d;
+    padding: 24px;
+    max-width: 60vw;
+    margin: 34px auto;
+    cursor: pointer;
+}
+
+.homepage {
+  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.homepage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  background: red;
+  border: none;
+  padding: 8px 16px;
+  color: rgb(15, 15, 15);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account-section {
+  margin-top: 30px;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.form button {
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
