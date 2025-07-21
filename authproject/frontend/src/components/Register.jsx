@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import API from "../api"
-import "../styles/register.css"
+//import "../styles/register.css"
 
 
 import Beams from "../blocks/Backgrounds/Beams/Beams.jsx"
@@ -58,120 +58,107 @@ const Register = () => {
   }
 
   return (
-    <>
-    <div className="beams-wrapper">
-  <Beams
-    beamWidth={2}
-    beamHeight={15}
-    beamNumber={12}
-    lightColor="#ffffff"
-    speed={2}
-    noiseIntensity={1.75}
-    scale={0.2}
-    rotation={0}
-  />
-</div>
+  <>
+      <div className="beams-wrapper">
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#ffffff"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
+        />
+      </div>
 
-    <div className="register-main">
-      {/* Beams background */}
-      
-
-      {/* Faded overlay box (optional) */}
       <div className="black-box"></div>
 
-      {/* Navbar */}
-      <nav>
-        <h1 style={{ color: "RED", fontSize: "32px" }}>SportsX</h1>
-        <div className="flex-for-select">
-          <select name="lang" id="langi">
-            <option value="en">English</option>
-            <option value="hi">Hindi</option>
-          </select>
-          <button onClick={() => navigate("/login")}>Sign In</button>
+      <div className="login-classic">
+        <nav className="nav-classic">
+          <h1 className="brand-classic">SportsX</h1>
+          <div className="nav-links">
+            <a href="#">Home</a>
+            <a onClick={() => navigate("/login")}>Login</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+        </nav>
+
+        <div className="login-content" data-aos="fade-up">
+          <div className="text-zone">
+            <h2 className="headline">Welcome to SportsX</h2>
+            <h1 className="mainline">Create Your Free Account</h1>
+            <p className="tagline">Join the community of passionate players</p>
+            <p className="subline">Fill out the fields to get started</p>
+
+            <form
+              className="form-classic"
+              onSubmit={handleSubmit}
+              encType="multipart/form-data"
+              data-aos="zoom-in"
+            >
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Full Name"
+                value={form.fullname}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={form.username}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+
+              <label className="upload-label">Upload Avatar</label>
+              <input
+                type="file"
+                name="avatar"
+                accept="image/*"
+                onChange={handleFileChange}
+                required
+              />
+
+              <label className="upload-label">Upload Cover Image</label>
+              <input
+                type="file"
+                name="coverImage"
+                accept="image/*"
+                onChange={handleFileChange}
+                required
+              />
+
+              <button type="submit">Register &gt;</button>
+            </form>
+          </div>
+
+          <div className="visual-zone" data-aos="zoom-in">
+            <div className="circle-decor"></div>
+            <div className="gradient-ring"></div>
+          </div>
         </div>
-      </nav>
-
-      {/* Form & Content */}
-      <div className="hero-div">
-        <span className="hero-items big">Create your account</span>
-        <span className="hero-items medium">
-          Share your passion with a world of fans and players
-        </span>
-        <span className="hero-items small">
-          Please fill in the details to register
-        </span>
-
-        <form
-          className="input-button"
-          onSubmit={handleSubmit}
-          encType="multipart/form-data"
-        >
-          <input
-            className="inp"
-            type="text"
-            name="fullname"
-            placeholder="Full Name"
-            value={form.fullname}
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="inp"
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="inp"
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={form.username}
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="inp"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="avatarUpload" className="upload-label">
-            Upload Avatar
-          </label>
-          <input
-            className="inp"
-            type="file"
-            name="avatar"
-            accept="image/*"
-            onChange={handleFileChange}
-            required
-          />
-
-          <label htmlFor="coverImageUpload" className="upload-label">
-            Upload Cover Image
-          </label>
-          <input
-            className="inp"
-            type="file"
-            name="coverImage"
-            accept="image/*"
-            onChange={handleFileChange}
-            required
-          />
-
-          <button className="but" type="submit">
-            Register &gt;
-          </button>
-        </form>
       </div>
-    </div>
     </>
   );
 };

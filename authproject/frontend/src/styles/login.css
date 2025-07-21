@@ -1,4 +1,5 @@
-/* Reset & base styles */
+/* CLASSIC DARK THEME LOGIN */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,116 +8,175 @@
 
 body, html {
   height: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f10;
+  color: white;
 }
 
-.login-main {
-  background-image: url('/collage.jpg'); 
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  color: white;
+.login-classic {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.nav-classic {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0f0f10;
 }
 
-/* Dark overlay */
-.black-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(19, 19, 19, 0.404);
-  z-index: 1;
+.brand-classic {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff0055;
 }
 
-/* Navbar */
-.navbar {
-  width: 100%;
-  padding: 1.5rem 2rem;
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.login-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
   position: relative;
-  z-index: 2;
 }
 
-.brand {
-  color: rgb(209, 8, 8);
-  font-size: 40px;
+.text-zone {
+  flex: 1;
+  max-width: 600px;
 }
 
-/* Hero text */
-.hero-div {
-  text-align: center;
-  margin-top: 5vh;
-  position: relative;
-  z-index: 2;
-  padding: 0 1rem;
+.headline {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
-.hero-items.big {
+.mainline {
   font-size: 2.5rem;
   font-weight: 800;
+  background: linear-gradient(90deg, #ff0055, #7f00ff);
+  
+  -webkit-background-clip: text;
+background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-.hero-items.medium {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.hero-items.small {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+.subline {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #bbb;
 }
 
-/* Form inputs and button */
-.input-button {
+.form-classic {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
-  z-index: 2;
 }
 
-.inp {
-  padding: 0.8rem;
+.form-classic input {
+  padding: 0.9rem 1rem;
   font-size: 1rem;
-  width: 300px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   outline: none;
+  background-color: #1e1e21;
+  color: white;
+  transition: 0.3s;
 }
 
-.inp::placeholder {
+.form-classic input::placeholder {
   color: #aaa;
 }
 
-.but {
-  background-color: #020202;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
+.form-classic button {
+  padding: 0.9rem;
   font-size: 1rem;
-  border-radius: 4px;
-  font-weight: bold;
+  background: linear-gradient(135deg, #ff0055, #7f00ff);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.3s;
 }
 
-.but:hover {
-  background-color: #1b1b1b;
+.form-classic button:hover {
+  transform: scale(1.05);
 }
 
-/* Responsive */
+.visual-zone {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-decor {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #7f00ff, #ff0055);
+  border-radius: 50%;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  z-index: 0;
+}
+
+.gradient-ring {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: conic-gradient(#ff0055, #7f00ff, #ff0055);
+  animation: rotate 10s linear infinite;
+  position: relative;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (max-width: 768px) {
-  .hero-items.big {
-    font-size: 2rem;
+  .login-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
   }
 
-  .inp {
-    width: 90%;
+  .visual-zone {
+    margin-top: 2rem;
   }
+
+  .form-classic input {
+    width: 100%;
+  }
+}
+
+[data-aos] {
+  transition-property: transform, opacity;
+  transition-duration: 1s;
 }

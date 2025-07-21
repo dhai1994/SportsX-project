@@ -41,44 +41,50 @@ const Login = ({}) => {
 
 
   return (
-    <>
-    
-    <div className="login-main">
-      <div className="black-box"></div>
-
-      <nav className="navbar">
-        <h1 className="brand">SportsX</h1>
+   <div className="login-classic">
+      <nav className="nav-classic">
+        <h1 className="brand-classic">SportsX</h1>
+        <div className="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Login</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
       </nav>
 
-      <div className="hero-div">
-        <span className="hero-items big">Tweet It. Talk It. Live It. This Is Your Home for Sports.</span>
-        <span className="hero-items medium">Real sports. Real people. Real community</span>
-        <span className="hero-items small">Your Sports Journey Starts Here!! Enter your email</span>
+      <div className="login-content" data-aos="fade-up">
+        <div className="text-zone">
+          <h2 className="headline">Tweet It. Talk It. Live It.</h2>
+          <h1 className="mainline">This Is Your Home for Sports.</h1>
+          <p className="tagline">Real sports. Real people. Real community</p>
+          <p className="subline">Your Sports Journey Starts Here!! Enter your email</p>
 
-        <form className="input-button" onSubmit={handleSubmit}>
-          <input
-            className="ib-item inp"
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="ib-item inp"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
-          <button className="ib-item but" type="submit">Login &gt;</button>
-        </form>
+          <form className="form-classic" onSubmit={handleSubmit} data-aos="zoom-in">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">Login &gt;</button>
+          </form>
+        </div>
+        <div className="visual-zone" data-aos="zoom-in">
+          <div className="circle-decor"></div>
+          <div className="gradient-ring"></div>
+        </div>
       </div>
     </div>
-    </>
   );
 };
 

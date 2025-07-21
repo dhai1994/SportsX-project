@@ -53,14 +53,11 @@ const [searchResults, setSearchResults] = useState([]);
   };
 
   return (
-    <div className="main">
-      {/* Dark overlay */}
-      <div className="overlay" />
-
-      {/* Content on top of overlay */}
-      <div className="content">
+    <div className="homepage">
+      <header className="hero-section">
+        <div className="overlay" />
         <nav className="navbar">
-          <h1 style={{ color: "black", fontSize: "32px" }}>SportsX</h1>
+          <h1 className="brand">SportsX</h1>
           <div className="dropdown-wrapper">
             <button className="btn btn-red-sm" onClick={() => setMenuOpen(!menuOpen)}>⋮</button>
             {menuOpen && (
@@ -69,120 +66,91 @@ const [searchResults, setSearchResults] = useState([]);
                 <div onClick={() => handleMenuClick("/update-password")}>Change Password</div>
                 <div onClick={() => handleMenuClick("/channel-info")}>Channel Info</div>
                 <div onClick={() => handleMenuClick("/upload")}>Upload Video</div>
-                <div onClick={() => handleMenuClick(`/c/${user?.username}`)}>AccountPage</div>
-
-
+                <div onClick={() => handleMenuClick(`/c/${user?.username}`)}>Account Page</div>
                 <div onClick={() => handleMenuClick("logout")}>Logout</div>
               </div>
             )}
           </div>
         </nav>
-
-        <div className="hero">
-          <h1>Welcome, {user?.name || "Player"}!</h1>
-          <p>Upload your highlights, share your journey, or catch pro moments live.</p>
-          <p>Click the menu (⋮) above to get started.</p>
-         
-         
-         <div className="hero-buttons">
-  <input
-    type="text"
-    placeholder="Search content or players..."
-    value={searchQuery}
-    onChange={(e) => setSearchQuery(e.target.value)}
-  />
-  <button className="btn btn-red" onClick={handleSearch}>Explore &gt;</button>
-</div>
-{searchResults.length > 0 && (
-  <div className="search-results">
-    <h2>Search Results:</h2>
-    {searchResults.map((video) => (
-      <div key={video._id} className="video-card">
-        <h3>{video.title}</h3>
-        <p>{video.description}</p>
-        <p><strong>By:</strong> {video.uploaderName}</p>
-        <video src={video.videoUrl} controls width="320" height="180" />
-      </div>
-    ))}
-  </div>
-)}
-
-
+        <div className="hero-text" data-aos="fade-up">
+          <h1>Welcome, {user?.name || 'Player'}!</h1>
+          <p>Upload highlights, share your journey, or watch your idols play live.</p>
+          <div className="hero-buttons">
+            <input
+              type="text"
+              placeholder="Search content or players..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="btn btn-red" onClick={handleSearch}>Explore &gt;</button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Sections */}
-      <section className="first">
+      {searchResults.length > 0 && (
+        <div className="search-results" data-aos="fade-up">
+          <h2>Search Results:</h2>
+          {searchResults.map((video) => (
+            <div key={video._id} className="video-card">
+              <h3>{video.title}</h3>
+              <p>{video.description}</p>
+              <p><strong>By:</strong> {video.uploaderName}</p>
+              <video src={video.videoUrl} controls width="320" height="180" />
+            </div>
+          ))}
+        </div>
+      )}
+
+      <section className="section" data-aos="fade-right">
         <div className="text-block">
-          <span className="title">Know more about your fav sports and player</span>
-          <span className="desc">
-            Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
-          </span>
+          <h2>Know Your Players</h2>
+          <p>Explore highlights of legendary moments in your favorite sports.</p>
         </div>
         <div className="media-block">
-          <video src="/videos/kohli.mp4" autoPlay loop muted controls height="350px" />
+          <video src="/videos/kohli.mp4" autoPlay loop muted controls />
         </div>
       </section>
 
-      <div className="separation"></div>
-
-      <section className="first second">
-        <div className="secImg">
-          <img src="thirdimg.jpg" alt="" height="350px" />
+      <section className="section reverse" data-aos="fade-left">
+        <div className="media-block">
+          <img src="/images/thirdimg.jpg" alt="Upload Section" />
         </div>
-        <div>
-          <span>Upload your videos playing sports ,fav player clips</span>
-          <span>Save your favourites easily and always have something to watch.</span>
+        <div className="text-block">
+          <h2>Upload Your Clips</h2>
+          <p>Save and showcase your sports moments for others to see.</p>
         </div>
       </section>
 
-      <div className="separation"></div>
-
-      <section className="first third">
-        <div>
-          <span>Watch everywhere</span>
-          <span>Stream unlimited matches on your phone, tablet, laptop, and TV.</span>
+      <section className="section" data-aos="fade-up">
+        <div className="text-block">
+          <h2>Watch Anywhere</h2>
+          <p>Stream matches from your phone, tablet, laptop, or TV seamlessly.</p>
         </div>
-        <div className="secImg">
-          <video
-            src="/videos/video2.mp4"
-            autoPlay
-            loop
-            muted
-            height="350px"
-            width="400px"
-          />
+        <div className="media-block">
+          <video src="/videos/video2.mp4" autoPlay loop muted controls />
         </div>
       </section>
 
-      <div className="separation"></div>
-
-      <section className="first second">
-        <div className="secImg">
-          <img
-            src="https://img.freepik.com/premium-photo/children-playing-outdoor-sports_1270664-25477.jpg"
-            alt=""
-            height="350"
-          />
+      <section className="section reverse" data-aos="zoom-in">
+        <div className="media-block">
+          <img src="https://img.freepik.com/premium-photo/children-playing-outdoor-sports_1270664-25477.jpg" alt="Kids Playing" />
         </div>
-        <div>
-          <span>Create profiles for children</span>
-          <span>Send children on grounds for playing sports that they like while seeing their fav player playing</span>
+        <div className="text-block">
+          <h2>Inspire Young Athletes</h2>
+          <p>Create profiles and let kids follow their favorite players.</p>
         </div>
       </section>
 
-      <div className="separation"></div>
-
-      {/* FAQ Section */}
-      <section className="faq">
+      <section className="faq" data-aos="fade-up">
         <h2>Frequently Asked Questions</h2>
         <div className="faqbox"><span>What is SportsX?</span></div>
-        <div className="faqbox"><span>What all I can do in SportsX?</span></div>
-        <div className="faqbox"><span>What can I watch on sportsclips?</span></div>
-        <div className="faqbox"><span>Where can I write?</span></div>
+        <div className="faqbox"><span>How do I upload videos?</span></div>
+        <div className="faqbox"><span>Can I follow my favorite players?</span></div>
+        <div className="faqbox"><span>Is it free to use?</span></div>
       </section>
     </div>
   );
 };
 
 export default HomePage;
+
