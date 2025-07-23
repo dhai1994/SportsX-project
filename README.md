@@ -1,1 +1,1 @@
-﻿# SportsX website
+SportsX
