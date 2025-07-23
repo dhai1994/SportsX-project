@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
+body, html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background-color: #000;
@@ -9,8 +13,8 @@ body {
 
 .hero-section {
   position: relative;
-  height: 80vh;
-  background: url('https://i0.wp.com/www.alainguillot.com/wp-content/uploads/2022/05/Community-coperation.png?fit=632%2C334&ssl=1') center/cover no-repeat;
+  min-height: 100vh;
+  background: url('https://tse4.mm.bing.net/th/id/OIP.ZWD1V0Pgs4nQVJzx_wT32wHaE8?rs=1&pid=ImgDetMain&o=7&rm=3') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;

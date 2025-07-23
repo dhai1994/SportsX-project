@@ -95,7 +95,7 @@ const [searchResults, setSearchResults] = useState([]);
               <h3>{video.title}</h3>
               <p>{video.description}</p>
               <p><strong>By:</strong> {video.uploaderName}</p>
-              <video src={video.videoUrl} controls width="320" height="180" />
+              <video src={video.videoUrl} controls width="320px" height="50px" />
             </div>
           ))}
         </div>
